@@ -4,57 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, .brand { font-family: 'Sora', sans-serif; }
+  </style>
 </head>
 <body>
 
   <!-- NAVBAR -->
   <div class="flex items-center justify-between border-b border-gray-200 px-6 py-3">
-  
-    <div class="font-bold text-lg">Logo</div>
+
+    <div class="brand font-bold text-lg">
+      <img src="./images/logo.png" alt="Logo" style="height: 60px; width: auto;">
+    </div>
 
     <!-- Desktop Nav -->
     <div class="hidden md:flex gap-10">
-      <div id="nav-about" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600">About us</div>
-      <div id="nav-reviews" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600">Reviews</div>
-      <div id="nav-developers" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600">Developers</div>
+      <div id="nav-about" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600 transition-colors">About us</div>
+      <div id="nav-reviews" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600 transition-colors">Reviews</div>
+      <div id="nav-developers" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600 transition-colors">Developers</div>
     </div>
 
     <!-- Desktop Buttons -->
     <div class="hidden md:flex gap-3">
-      <button id="btn-signup" class="bg-blue-500 cursor-pointer hover:bg-blue-600 text-white px-5 py-2 rounded-full font-semibold text-sm">SIGN UP</button>
-      <button id="btn-login" class="border border-gray-300 cursor-pointer hover:border-blue-500 text-gray-700 px-5 py-2 rounded-full font-semibold text-sm">LOGIN</button>
+      <button id="btn-signup" class="bg-blue-500 cursor-pointer hover:bg-blue-600 text-white px-5 py-2 rounded-full font-semibold text-sm transition-colors">SIGN UP</button>
+      <a href="./login.html" id="btn-login" class="border border-gray-300 cursor-pointer hover:border-blue-500 text-gray-700 px-5 py-2 rounded-full font-semibold text-sm transition-colors">LOGIN</a>
     </div>
 
-    <button id="btn-hamburger" class="md:hidden flex flex-col gap-1.5" onclick="toggleMenu()">
+    <!-- Hamburger -->
+    <button id="btn-hamburger" class="md:hidden flex flex-col gap-1.5 cursor-pointer" onclick="toggleMenu()">
       <span class="block w-6 h-0.5 bg-gray-700"></span>
       <span class="block w-6 h-0.5 bg-gray-700"></span>
       <span class="block w-6 h-0.5 bg-gray-700"></span>
     </button>
+
   </div>
 
-  <!-- Mobile Menu (hidden by default) -->
+  <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden flex-col items-center gap-4 py-4 border-b border-gray-200">
-    <div id="nav-about-mobile" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600">About us</div>
-    <div id="nav-reviews-mobile" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600">Reviews</div>
-    <div id="nav-developers-mobile" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600">Developers</div>
-    <button id="btn-signup-mobile" class="bg-blue-500 cursor-pointer hover:bg-blue-600 text-white px-5 py-2 rounded-full font-semibold text-sm">SIGN UP</button>
-    <button id="btn-login-mobile" class="border border-gray-300 cursor-pointer hover:border-blue-500 text-gray-700 px-5 py-2 rounded-full font-semibold text-sm">LOGIN</button>
+    <div id="nav-about-mobile" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600 transition-colors">About us</div>
+    <div id="nav-reviews-mobile" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600 transition-colors">Reviews</div>
+    <div id="nav-developers-mobile" class="cursor-pointer text-gray-700 font-medium hover:text-blue-600 transition-colors">Developers</div>
+    <button id="btn-signup-mobile" class="bg-blue-500 cursor-pointer hover:bg-blue-600 text-white px-5 py-2 rounded-full font-semibold text-sm transition-colors">SIGN UP</button>
+    <a href="./login.html" id="btn-login-mobile" class="border border-gray-300 cursor-pointer hover:border-blue-500 text-gray-700 px-5 py-2 rounded-full font-semibold text-sm transition-colors">LOGIN</a>
   </div>
 
   <!-- HERO -->
-  <div class="front-background h-[500px] md:h-[660px] bg-cover bg-center flex flex-col items-center justify-center text-center px-4" style="background-image: url('./images/test.webp')">
-  
-    <h1 class="text-3xl sm:text-5xl md:text-6xl font-black mb-4 max-w-3xl leading-tight">
-      Know where to, <br> PARA!
-    </h1>
-    
-    <p class="text-gray-600 mb-8 max-w-lg text-sm sm:text-base">
-      PARA! is a navigation website designed to help people who are unfamiliar with jeepney routes navigate the city easily. It uses known jeepney stops and routes to recommend the best way to travel from a user's pinned location to their destination.
-    </p>
+  <div class="relative h-[1000px] flex flex-col items-center justify-center text-center px-4">
 
-    <button id="btn-get-started" class="bg-blue-500 cursor-pointer hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium">
+    <!-- Background image -->
+    <div class="absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('./images/frontbg.png'); opacity: 0.6;"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black mb-4 max-w-3xl leading-tight">
+        Know where to, <br>
+        <img src="./images/ParaLogo.png" alt="PARA!" style="height: 156px; width: auto; margin: 0 auto;">
+      </h1>
+
+      <p class="text-gray-600 mb-8 max-w-lg text-sm sm:text-base">
+        PARA! is a navigation website designed to help people who are unfamiliar with jeepney routes navigate the city easily. It uses known jeepney stops and routes to recommend the best way to travel from a user's pinned location to their destination.
+      </p>
+
+      <a href="./login.html" id="btn-get-started" class="bg-blue-500 cursor-pointer hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-colors">
       GET STARTED
-    </button>
+      </a>
+    </div>
 
   </div>
 
